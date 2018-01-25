@@ -13,13 +13,12 @@ type StaticFileServer struct {
 	FallbackHandler http.Handler
 }
 
-func NewStaticFileServer(root http.Dir, fallback http.HandlerFunc) (*StaticFileServer, error) {
-	fs := &StaticFileServer{
+func New(root http.Dir, fallback http.HandlerFunc) *StaticFileServer {
+	return &StaticFileServer{
 		Root:            root,
 		FallbackHandler: fallback,
 	}
 
-	return fs, nil
 }
 
 func (fs StaticFileServer) ServeHTTP(w http.ResponseWriter, r *http.Request) {
