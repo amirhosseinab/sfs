@@ -1,5 +1,4 @@
-# sfs
-Static File Server
+# Static File Server
 
 By using this package you can serve static files with __404 Error__ fallback to custom `http.handler`.
 
